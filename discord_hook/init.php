@@ -26,7 +26,7 @@ class discord_hook extends Plugin {
 	}
 
 	function save() {
-		$discord_webhook_url = db_escape_string($_POST["discord_webhook_url"]);
+		$discord_webhook_url = $_POST["discord_webhook_url"];
 		$this->host->set($this, "discord_webhook_schema", 1); /* futureproof! */
 		$this->host->set($this, "discord_webhook_url", $discord_webhook_url);
 	}
