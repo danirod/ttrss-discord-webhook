@@ -45,7 +45,6 @@ class discord_hook extends Plugin {
 					<script type="dojo/method" event="onSubmit" args="evt">
 						evt.preventDefault();
 						if (this.validate()) {
-							Notify.progress('Saving discord_webhook configuration...', true);
 							xhr.post("backend.php", this.getValues(), (reply) => {
 								Notify.info(reply);
 							})							
