@@ -26,7 +26,7 @@ class discord_hook extends Plugin {
 	}
 
 	function save() {
-		$discord_webhook_url = db_escape_string($_POST["discord_webhook_url"]);
+		$discord_webhook_url = $_POST["discord_webhook_url"];
 		$this->host->set($this, "discord_webhook_schema", 1); /* futureproof! */
 		$this->host->set($this, "discord_webhook_url", $discord_webhook_url);
 	}
@@ -45,12 +45,9 @@ class discord_hook extends Plugin {
 					<script type="dojo/method" event="onSubmit" args="evt">
 						evt.preventDefault();
 						if (this.validate()) {
-							new Ajax.Request("backend.php", {
-								parameters: dojo.objectToQuery(this.getValues()),
-								onComplete: function(transport) {
-									notify_info(transport.responseText);
-								}
-							});
+							xhr.post("backend.php", this.getValues(), (reply) => {
+								Notify.info(reply);
+							})							
 						}
 					</script>
 

@@ -1,16 +1,14 @@
 ttrss-discord-hook
 ==================
 
-A plugin for TinyTinyRSS that adds a filter action so that new items received
+A fork of [danirod's plugin](https://git.danirod.es/ttrss-discord-webhook.git) for TinyTinyRSS that adds a filter action so that new items received
 by feeds can be sent as links to a Discord webhook previously configured in
 the settings.
 
-This is a very WIP plugin, so use under your own risk.
+I wanted to use it with a recent TinyTinyRSS version, so I shamelessly copied code from [tt-rss-yourls' plugin](https://github.com/joshp23/tt-rss-yourls/) and pasted it where I could.
+
+According to danirod, this was a very WIP plugin to start with. I didn't improve anything, so use under your own risk.
 
 How to install? Copy the discord_hook directory to your plugins.local/
 directory in your TinyTinyRSS install. If you are using Docker builds, you
 can also bind the directory or something like that.
-
-Tracker: https://redmine.danirod.es/projects/ttrss-discord-webhook
-Git repository: https://git.danirod.es/ttrss-discord-webhook.git
-GitHub mirror: https://github.com/danirod/ttrss-discord-webhook
